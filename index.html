@@ -452,17 +452,7 @@
             background: linear-gradient(135deg, var(--primary), var(--accent));
             z-index: 1;
         }
-.headline {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #00bcd4; /* your accent color */
-  height: 50px; /* to prevent jump */
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid #00bcd4; /* cursor effect */
-  padding-right: 5px;
-  font-family: 'Poppins', sans-serif;
-}
+
 
         .popup {
             display: none;
@@ -762,11 +752,6 @@
             </div>
         </div>
     </section>
-
-        <div class="headline">
-  <span id="typewriter"></span>
-</div>
-
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
@@ -1144,44 +1129,6 @@
         closeBtn.addEventListener('click', () => {
             popup.style.display = 'none';
         });
-        const phrases = [
-  "Welcome to my Portfolio",
-  "Haider Ali",
-  "Software Engineer",
-  "CS Educator"
-];
-
-let i = 0;
-let j = 0;
-let currentPhrase = '';
-let isDeleting = false;
-const typeSpeed = 100;
-const pause = 1500;
-
-function type() {
-  const fullPhrase = phrases[i];
-  
-  if (isDeleting) {
-    currentPhrase = fullPhrase.substring(0, j--);
-  } else {
-    currentPhrase = fullPhrase.substring(0, j++);
-  }
-  
-  document.getElementById("typewriter").textContent = currentPhrase;
-  
-  if (!isDeleting && j === fullPhrase.length + 1) {
-    isDeleting = true;
-    setTimeout(type, pause);
-  } else if (isDeleting && j === 0) {
-    isDeleting = false;
-    i = (i + 1) % phrases.length;
-    setTimeout(type, 500);
-  } else {
-    setTimeout(type, typeSpeed);
-  }
-}
-
-type()
 
         // Close popup when clicking outside the content
         window.addEventListener('click', (e) => {
